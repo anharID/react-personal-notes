@@ -2,17 +2,47 @@ import React from "react";
 
 function Header({ onSearch }) {
   return (
-    <nav className="navbar bg-body-tertiary">
-      <div className="container-fluid">
-        <a className="navbar-brand">My Note</a>
-        <form className="d-flex" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(event) => onSearch(event)} id="search-navbar" />
-          {/* <button className="btn btn-outline-success" type="submit">
-            Search
-          </button> */}
-        </form>
+    <nav className="navbar navbar-expand-lg sticky-top navbar-dark bg-primary shadow-sm">
+      <div className="container">
+        <a className="navbar-brand" href="#">
+          Catatan Saya
+        </a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#aktif">
+                Aktif
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#arsip">
+                Arsip
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input className="form-control" type="search" placeholder="Cari catatan" aria-label="Search" onChange={(event) => onSearch(event)} id="search-navbar" />
+          </form>
+        </div>
       </div>
     </nav>
+
+    // <nav className="navbar bg-primary-subtle">
+    //   <div className="container">
+    //     <a className="navbar-brand fw-bold fs-3">Catatan Saya</a>
+    //     <form role="search">
+    //       <input className="form-control" type="search" placeholder="Cari catatan" aria-label="Search" onChange={(event) => onSearch(event)} id="search-navbar" />
+    //     </form>
+    //   </div>
+    // </nav>
   );
 }
 

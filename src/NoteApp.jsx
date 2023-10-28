@@ -1,10 +1,11 @@
 import React from "react";
-import Header from "./Header";
-import FormInput from "./FormInput";
-import Body from "./Body";
-import { getInitialData } from "../utils/index";
+import Header from "./components/Header";
+import FormInput from "./components/FormInput";
+import Notes from "./components/Notes";
+import { getInitialData } from "./utils/initial_data";
+import Footer from "./components/Footer";
 
-class PersonalNote extends React.Component {
+class NoteApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,10 +69,11 @@ class PersonalNote extends React.Component {
       <>
         <Header onSearch={this.onSearchHandler} />
         <FormInput addDatas={this.onAddDatasHandler} />
-        <Body onDelete={this.onDeleteHandler} activeDatas={activeDatas} archiveDatas={archiveDatas} onActive={this.onActiveHandler} onArchive={this.onArchiveHandler} />
+        <Notes onDelete={this.onDeleteHandler} activeDatas={activeDatas} archiveDatas={archiveDatas} onActive={this.onActiveHandler} onArchive={this.onArchiveHandler} />
+        <Footer />
       </>
     );
   }
 }
 
-export default PersonalNote;
+export default NoteApp;

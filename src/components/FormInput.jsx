@@ -43,58 +43,29 @@ class FormInput extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmitEventHandler}>
-        <div className="mb-3">
-          <label htmlFor="title" className="form-label">
-            Judul (<span className="text-sm text-gray-500">{this.state.limit - this.state.title.length} sisa karakter</span>)
-          </label>
-          <input type="title" id="title" className="form-control" value={this.state.title} onChange={this.onTitleChangeEventHandler} placeholder="Isikan judul" required />
+      <div className="container-fluid">
+        <div className="bg-light mx-auto p-4 my-4 col-12 col-md-6 justify-content-center align-items-center">
+          <h2 className="text-center mb-4">Tambah Catatan</h2>
+          <form onSubmit={this.onSubmitEventHandler}>
+            <div className="mb-3">
+              <label htmlFor="title" className="form-label fs-5">
+                Judul
+              </label>
+              <input type="title" id="title" className="form-control" value={this.state.title} onChange={this.onTitleChangeEventHandler} placeholder="Isikan judul" required />
+              <p className="text-end text-muted text-gray-500">{this.state.limit - this.state.title.length} sisa karakter</p>
+            </div>
+            <div className="mb-3">
+              <label htmlFor="note" className="form-label fs-5">
+                Catatan
+              </label>
+              <textarea className="form-control" id="note" value={this.state.body} onChange={this.onBodyChangeEventHandler} rows="5"></textarea>
+            </div>
+            <button type="submit" className="btn btn-primary mb-4">
+              Tambah Catatan
+            </button>
+          </form>
         </div>
-        <div className="mb-3">
-          <label htmlFor="note" className="form-label">
-            Catatan
-          </label>
-          <textarea className="form-control" id="note" value={this.state.body} onChange={this.onBodyChangeEventHandler} rows="5"></textarea>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Tambah Catatan
-        </button>
-      </form>
-
-      //   <form className="px-5 sm:px-24 py-7 md:py-14" onSubmit={this.onSubmitEventHandler}>
-      //     <div className="container">
-      //       <div className="mb-6">
-      //         <label htmlFor="title" className="block mb-2 text-lg font-medium text-gray-900">
-      //           Judul : <span className="text-sm text-gray-500">{this.state.limit - this.state.title.length} sisa karakter</span>
-      //         </label>
-      //         <input
-      //           value={this.state.title}
-      //           onChange={this.onTitleChangeEventHandler}
-      //           type="title"
-      //           id="title"
-      //           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-      //           placeholder="Tuliskan judul..."
-      //           required=""
-      //         />
-      //       </div>
-      //       <div className="mb-6">
-      //         <label htmlFor="message" className="block mb-2 text-lg font-medium text-gray-900">
-      //           Catatan
-      //         </label>
-      //         <textarea
-      //           value={this.state.body}
-      //           onChange={this.onBodyChangeEventHandler}
-      //           id="message"
-      //           rows="4"
-      //           className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-      //           placeholder="Tuliskan catatan..."
-      //         ></textarea>
-      //       </div>
-      //       <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base w-full sm:w-auto px-5 py-2.5 text-center">
-      //         Tambahkan
-      //       </button>
-      //     </div>
-      //   </form>
+      </div>
     );
   }
 }

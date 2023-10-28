@@ -1,11 +1,13 @@
 import React from "react";
 import Card from "./Card";
 
-function ActiveNode({ onDelete, onActive, notes }) {
+function ActiveNode({ notes, onDelete, onActive }) {
   return (
-    <div className="row row-cols-4">
+    <div className="row row-cols-1 row-cols-md-4 g-4">
       {notes.map((note) => (
-        <Card className="m-2" changeButton="Arsip" key={note.id} onDelete={onDelete} buttonData={onActive} {...note} />
+        <div className="col">
+          <Card changeButton="Arsip" key={note.id} onDelete={onDelete} buttonData={onActive} {...note} />
+        </div>
       ))}
     </div>
   );
