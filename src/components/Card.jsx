@@ -11,10 +11,10 @@ function Card({ id, title, body, createdAt, onDelete, changeButton, buttonData }
       </div>
       <div className="card-footer">
         <div className="text-center">
-          <button type="button" onClick={() => onDelete(id)} className="btn btn-danger m-2">
+          <button type="button" className="btn btn-danger m-2" onClick={() => onDelete(id)}>
             Hapus
           </button>
-          <button type="button" onClick={() => buttonData(id)} className="btn btn-primary">
+          <button type="button" className="btn btn-primary" onClick={() => buttonData(id)}>
             {changeButton}
           </button>
         </div>

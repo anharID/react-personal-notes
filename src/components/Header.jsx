@@ -29,20 +29,11 @@ function Header({ onSearch }) {
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input className="form-control" type="search" placeholder="Cari catatan" aria-label="Search" onChange={(event) => onSearch(event)} id="search-navbar" />
+            <input type="search" className="form-control" placeholder="Cari catatan" aria-label="Search" onChange={(event) => onSearch(event)} id="search-navbar" />
           </form>
         </div>
       </div>
     </nav>
-
-    // <nav className="navbar bg-primary-subtle">
-    //   <div className="container">
-    //     <a className="navbar-brand fw-bold fs-3">Catatan Saya</a>
-    //     <form role="search">
-    //       <input className="form-control" type="search" placeholder="Cari catatan" aria-label="Search" onChange={(event) => onSearch(event)} id="search-navbar" />
-    //     </form>
-    //   </div>
-    // </nav>
   );
 }
 
